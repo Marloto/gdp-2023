@@ -1,3 +1,4 @@
+package practice.group2.examples;
 
 public class ExamplesFromGroup2 {
     private String test;

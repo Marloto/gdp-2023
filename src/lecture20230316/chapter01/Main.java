@@ -1,3 +1,4 @@
+package lecture20230316.chapter01;
 public class Main {
   // eine Funktion könnte man aktuell wie folgt definieren
   static int ggt(int zahl1, int zahl2) {

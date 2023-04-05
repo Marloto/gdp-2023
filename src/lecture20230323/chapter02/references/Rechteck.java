@@ -1,3 +1,4 @@
+package lecture20230323.chapter02.references;
 // Klasse: Rechteck, Fließkommazahl höhe und breite, zwei Konstruktoren zum Initialisieren der Objekte, einer mit einem Parameter und einem mit zwei
 // Dazu eine Methode zum Berechnen des Flächeninhaltes
 

@@ -1,3 +1,4 @@
+package lecture20230316.chapter01;
 // First Eclipse Snippet from 16.03.2023
 public class Something2 {
 	public static int ggT(int zahl1, int zahl2) {

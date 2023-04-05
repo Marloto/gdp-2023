@@ -1,3 +1,4 @@
+package lecture20230316.chapter01;
 public class Something {
     public static void main(String[] args) {
         java.util.Scanner scanner = new java.util.Scanner(System.in);
