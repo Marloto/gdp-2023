@@ -1,4 +1,5 @@
 package practice.group1.examples;
+
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
@@ -22,7 +23,13 @@ public class TestAudioFile {
         assertEquals("", pathname2);
     }
     @Test
-    public void testPathname03() {
+    public void testPathname03() throws Exception {
+        // Wenn Sie die EmulateOtherOs-Klasse aus dem Cert
+        // Paket kopieren, können Sie in eigenen Tests diese
+        // verwenden. Dafür ist das "throws Exception" notwendig
+        // hinter der Methode notwendig.
+        EmulateOtherOs.emulateLinux();
+        
         AudioFile audio2 = new AudioFile();
         audio2.parsePathname("//your-tmp/part1//file.mp3/");
         String pathname2 = audio2.getPathname();
