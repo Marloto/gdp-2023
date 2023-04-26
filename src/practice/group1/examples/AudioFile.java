@@ -1,6 +1,5 @@
 package practice.group1.examples;
 
-
 public class AudioFile {
     public AudioFile() {
     }
