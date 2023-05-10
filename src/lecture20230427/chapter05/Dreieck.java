@@ -1,4 +1,4 @@
-package lecutre20230427.chapter05;
+package lecture20230427.chapter05;
 
 public class Dreieck implements GeometrischesObjekt {
     private double a, b, c;
