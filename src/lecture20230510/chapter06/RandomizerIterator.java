@@ -19,7 +19,7 @@ public class RandomizerIterator implements Iterator<Double> {
     public Double next() {
         double max = rand.getMax();
         double min = rand.getMin();
-        double value = 0.5 * (max - min) + min;
+        double value = Math.random() * (max - min) + min;
         this.i ++;
         return value;
     }
