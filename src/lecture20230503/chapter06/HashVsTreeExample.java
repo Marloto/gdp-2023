@@ -1,4 +1,4 @@
-package lecutre20230503.chapter06;
+package lecture20230503.chapter06;
 
 import java.util.HashSet;
 import java.util.Iterator;

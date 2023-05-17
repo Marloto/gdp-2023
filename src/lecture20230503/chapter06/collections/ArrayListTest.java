@@ -1,8 +1,8 @@
-package lecutre20230503.chapter06.collections;
+package lecture20230503.chapter06.collections;
 
 import java.util.ArrayList;
 
-import lecutre20230503.chapter06.collections.Messwerkzeuge.Data;
+import lecture20230503.chapter06.collections.Messwerkzeuge.Data;
 
 public class ArrayListTest extends Messwerkzeuge {
 

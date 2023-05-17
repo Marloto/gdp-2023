@@ -1,4 +1,4 @@
-package lecutre20230503.chapter06.collections;
+package lecture20230503.chapter06.collections;
 
 public class Messwerkzeuge {
     protected static final int ITERATIONS = 10000;

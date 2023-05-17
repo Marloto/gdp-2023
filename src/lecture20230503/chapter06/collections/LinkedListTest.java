@@ -1,4 +1,4 @@
-package lecutre20230503.chapter06.collections;
+package lecture20230503.chapter06.collections;
 
 import java.util.LinkedList;
 
