@@ -1,4 +1,4 @@
-package lecture24052023.chapter09;
+package lecture20230524.chapter09;
 class A { }
 public class Example {
  public class B { }
