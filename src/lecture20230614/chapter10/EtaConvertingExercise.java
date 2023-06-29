@@ -8,6 +8,13 @@ class Position {
         this.x = x;
         this.y = y;
     }
+    
+    public Position(String input) {
+        String[] split = input.split(",");
+        this.x = Integer.valueOf(split[0]);
+        this.y = Integer.valueOf(split[1]);
+    }
+    
     public int getX() {
         return x;
     }
@@ -19,6 +26,9 @@ class Position {
         return new Position(
                 Integer.valueOf(split[0]), 
                 Integer.valueOf(split[0]));
+    }
+    public String toString() {
+        return "Position [x=" + x + ", y=" + y + "]";
     }
 }
 
@@ -36,6 +46,10 @@ public class EtaConvertingExercise {
     }
     
     public static void main(String[] args) {
+        // readAndPrint((x) -> Position.fromString(x));
         readAndPrint(Position::fromString);
+        
+        // readAndPrint((x) -> new Position(x));
+        readAndPrint(Position::new);
     }
 }

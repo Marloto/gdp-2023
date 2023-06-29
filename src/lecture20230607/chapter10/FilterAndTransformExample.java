@@ -1,10 +1,12 @@
 package lecture20230607.chapter10;
 
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Stream;
 
 //interface Transform<I, O> { // <- Function
 //    O doIt(I text);
@@ -38,45 +40,13 @@ class Animal {
         String name = split[1];
         return new Animal(age, name);
     }
+    @Override
+    public String toString() {
+        return "Animal [age=" + age + ", name=" + name + "]";
+    }
 }
 
 public class FilterAndTransformExample {
-    
-    public static List<Animal> transform(List<String> list, Function<String, Animal> transformer) {
-        List<Animal> result = new ArrayList<>();
-        for(String line : list) {
-            result.add(transformer.apply(line));
-        }
-        return result;
-    }
-    
-    public static List<Animal> filter(List<Animal> list, Predicate<Animal> filter) {
-        List<Animal> result = new ArrayList<>();
-        for(Animal animal : list) {
-            if(filter.test(animal))
-                result.add(animal);
-        }
-        return result;
-    }
-    
-    public static void consume(List<Animal> list, Consumer<Animal> printer) {
-        for(Animal animal : list) {
-            printer.accept(animal);
-        }
-    }
-    public static void doAll(List<String> input, Function<String, Animal> transformer, Predicate<Animal> filter, Consumer<Animal> printer) {
-        for(String line : input) {
-            Animal animal = transformer.apply(line);
-            if(filter.test(animal)) {
-                printer.accept(animal);
-            }
-        }
-    }
-    
-    public static void doSomething(Runnable run) {
-        run.run();
-    }
-    
     public static void main(String[] args) {
         List<String> list = new ArrayList<>();
         list.add("5;Buddy");
@@ -84,16 +54,21 @@ public class FilterAndTransformExample {
         list.add("3;Bruno");
         list.add("7;Sammy");
         
-        List<Animal> transform = transform(list, (input) -> Animal.fromString(input));
-        List<Animal> filter = filter(transform, (animal) -> animal.getAge() >= 4);
-        consume(filter, (animal) -> System.out.println(animal.getName()));
+        list.stream()
+            .map((input) -> Animal.fromString(input))
+//            .filter((animal) -> animal.getAge() >= 4)
+//            .filter((animal) -> animal.getName().startsWith("B"))
+            .filter((animal) -> animal.getAge() >= 4 &&
+                 animal.getName().startsWith("B"))
+            .forEach(System.out::println);
         
-        doAll(list, (input) -> Animal.fromString(input), 
-            (animal) -> animal.getAge() >= 4, 
-            (animal) -> System.out.println(animal.getName()));
+        // Ohne Stream und Lambda
+        for(String var: list) {
+            Animal animal = Animal.fromString(var);
+            if(animal.getAge() >= 4 && animal.getName().startsWith("B")) {
+                System.out.println(animal);
+            }
+        }
         
-        doSomething(() -> {
-            // ...
-        });
     }
 }
