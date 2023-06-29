@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Polyline {
+public class Polyline implements Iterable<Position> {
 	private List<Position> positions;
+	
+	// attribut mit setter
 	
 	public Polyline() {
 		this.positions = new ArrayList<>();
@@ -28,5 +30,13 @@ public class Polyline {
 	public String toString() {
 		return this.positions.toString();
 	}
+	
+	public Iterable<Position> part(double distance) {
+	    return () -> new PartIterator(distance, positions);
+	}
+
+    public Iterator<Position> iterator() {
+        return this.positions.iterator();
+    }
 	
 }

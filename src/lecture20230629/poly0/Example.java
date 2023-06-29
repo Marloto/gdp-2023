@@ -7,9 +7,9 @@ public class Example {
 		polyline.add(10, 0);
 		polyline.add(20, 0);
 		
-//		for(Position p : polyline) {
-//			System.out.println(p);
-//		}
+		for(Position p : polyline.part(15)) {
+			System.out.println(p);
+		}
 	}
 }
 
